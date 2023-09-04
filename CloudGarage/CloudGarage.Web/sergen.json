@@ -1,0 +1,95 @@
+{
+  "RootNamespace": "CloudGarage",
+  "ServerTypings": {
+    "LocalTexts": true
+  },
+  "Restore": {
+    "Exclude": [
+      "/wwwroot/Scripts/serenity/Serenity.CoreLib*.*",
+      "/wwwroot/Content/serenity/*"
+    ]
+  },
+  "Connections": [
+    {
+      "Key": "couldgarage",
+      "Tables": [
+        {
+          "Tablename": "banktransactions",
+          "Identifier": "Banktransactions",
+          "Module": "CashBank",
+          "PermissionKey": "Administration:General"
+        },
+        {
+          "Tablename": "cashadjustment",
+          "Identifier": "Cashadjustment",
+          "Module": "CashBank",
+          "PermissionKey": "Administration:General"
+        },
+        {
+          "Tablename": "companies",
+          "Identifier": "Companies",
+          "Module": "Masters",
+          "PermissionKey": "Administration:General"
+        },
+        {
+          "Tablename": "customerreceive",
+          "Identifier": "Customerreceive",
+          "Module": "CashBank",
+          "PermissionKey": "Administration:General"
+        },
+        {
+          "Tablename": "dailyclosing",
+          "Identifier": "Dailyclosing",
+          "Module": "Reports",
+          "PermissionKey": "Administration:General"
+        },
+        {
+          "Tablename": "expenses",
+          "Identifier": "Expenses",
+          "Module": "CashBank",
+          "PermissionKey": "Administration:General"
+        },
+        {
+          "Tablename": "purchase",
+          "Identifier": "Purchase",
+          "Module": "Purchasing",
+          "PermissionKey": "Administration:General"
+        },
+        {
+          "Tablename": "sales",
+          "Identifier": "Sales",
+          "Module": "Sales",
+          "PermissionKey": "Administration:General"
+        },
+        {
+          "Tablename": "supplierpayment",
+          "Identifier": "Supplierpayment",
+          "Module": "CashBank",
+          "PermissionKey": "Administration:General"
+        },
+        {
+          "Tablename": "vehicle",
+          "Identifier": "Vehicle",
+          "Module": "Vehicles",
+          "PermissionKey": "Administration:General"
+        },
+        {
+          "Tablename": "vehiclebookings",
+          "Identifier": "Vehiclebookings",
+          "Module": "Bookings",
+          "PermissionKey": "Administration:General"
+        },
+        {
+          "Tablename": "vehiclecourtesybooking",
+          "Identifier": "Vehiclecourtesybooking",
+          "Module": "Bookings",
+          "PermissionKey": "Administration:General"
+        }
+      ]
+    }
+  ],
+  "UpgradeInfo": {
+    "InitialType": "Premium",
+    "InitialVersion": "5.2.3.0"
+  }
+}

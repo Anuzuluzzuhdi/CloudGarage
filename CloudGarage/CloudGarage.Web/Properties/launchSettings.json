@@ -1,0 +1,19 @@
+{
+  "profiles": {
+    "Kestrel": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:50505"
+    },
+    "CloudGarage.Web": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:58804;http://localhost:58805"
+    }
+  }
+}

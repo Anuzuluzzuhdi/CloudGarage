@@ -1,0 +1,31 @@
+.s-TranslationGrid input.custom-text {
+  width: 100%;
+}
+
+.s-UserPermissionDialog > .size,
+.s-RolePermissionDialog > .size,
+.s-UserRoleDialog > .size {
+    min-width: 770px;
+    width: 770px;
+    min-height: 550px;
+    height: 550px;
+}
+
+.s-UserPermissionDialog .s-DataGrid,
+.s-RolePermissionDialog .s-DataGrid,
+.s-UserRoleDialog .s-DataGrid {
+  height: 100%;
+}
+
+.field{
+    padding-bottom:0px !important;
+}
+.field .caption{
+    margin-bottom :0px !important;
+}
+.ui-tabs .tab-pane {
+    padding: 0rem 0 0 0 !important;
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+}

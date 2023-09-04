@@ -1,0 +1,195 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Projects\\CloudGarage\\CloudGarage\\CloudGarage\\CloudGarage.Web\\CloudGarage.Web.csproj": {}
+  },
+  "projects": {
+    "C:\\Projects\\CloudGarage\\CloudGarage\\CloudGarage\\CloudGarage.Web\\CloudGarage.Web.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Projects\\CloudGarage\\CloudGarage\\CloudGarage\\CloudGarage.Web\\CloudGarage.Web.csproj",
+        "projectName": "CloudGarage.Web",
+        "projectPath": "C:\\Projects\\CloudGarage\\CloudGarage\\CloudGarage\\CloudGarage.Web\\CloudGarage.Web.csproj",
+        "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
+        "outputPath": "C:\\Projects\\CloudGarage\\CloudGarage\\CloudGarage\\CloudGarage.Web\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Projects\\CloudGarage\\CloudGarage\\NuGet.Config",
+          "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Projects\\CloudGarage\\CloudGarage\\pro-packages": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "EPPlus": {
+              "target": "Package",
+              "version": "[4.5.3.2, )"
+            },
+            "FastMember": {
+              "target": "Package",
+              "version": "[1.5.0, )"
+            },
+            "FastReport.Data.MySql": {
+              "target": "Package",
+              "version": "[2022.2.0, )"
+            },
+            "FastReport.OpenSource": {
+              "target": "Package",
+              "version": "[2022.2.7, )"
+            },
+            "FastReport.OpenSource.Data.MySql": {
+              "target": "Package",
+              "version": "[2021.4.0, )"
+            },
+            "FastReport.OpenSource.Export.PdfSimple": {
+              "target": "Package",
+              "version": "[2022.2.7, )"
+            },
+            "FastReport.OpenSource.Web": {
+              "target": "Package",
+              "version": "[2022.2.7, )"
+            },
+            "FluentMigrator.Runner": {
+              "target": "Package",
+              "version": "[3.2.9, )"
+            },
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
+            "Microsoft.Data.Sqlite": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
+            "Microsoft.TypeScript.MSBuild": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.7.4, )"
+            },
+            "MySql.Data": {
+              "target": "Package",
+              "version": "[8.0.29, )"
+            },
+            "Serenity.Assets": {
+              "target": "Package",
+              "version": "[5.2.2, )"
+            },
+            "Serenity.Demo.AdvancedSamples": {
+              "target": "Package",
+              "version": "[5.2.3, )"
+            },
+            "Serenity.Demo.BasicSamples": {
+              "target": "Package",
+              "version": "[5.2.2, )"
+            },
+            "Serenity.Demo.Northwind": {
+              "target": "Package",
+              "version": "[5.2.2, )"
+            },
+            "Serenity.Extensions": {
+              "target": "Package",
+              "version": "[5.2.2, )"
+            },
+            "Serenity.Net.Web": {
+              "target": "Package",
+              "version": "[5.2.3, )"
+            },
+            "Serenity.Pro.DataAuditLog": {
+              "target": "Package",
+              "version": "[5.2.3, )"
+            },
+            "Serenity.Pro.DataExplorer": {
+              "target": "Package",
+              "version": "[5.2.3, )"
+            },
+            "Serenity.Pro.EmailClient": {
+              "target": "Package",
+              "version": "[5.2.3, )"
+            },
+            "Serenity.Pro.EmailQueue": {
+              "target": "Package",
+              "version": "[5.2.3, )"
+            },
+            "Serenity.Pro.Extensions": {
+              "target": "Package",
+              "version": "[5.2.3, )"
+            },
+            "Serenity.Pro.Meeting": {
+              "target": "Package",
+              "version": "[5.2.3, )"
+            },
+            "Serenity.Pro.Organization": {
+              "target": "Package",
+              "version": "[5.2.3, )"
+            },
+            "Serenity.Pro.Theme": {
+              "target": "Package",
+              "version": "[5.2.3, )"
+            },
+            "Serenity.Pro.UI": {
+              "target": "Package",
+              "version": "[5.2.3, )"
+            },
+            "Serenity.Pro.WorkLog": {
+              "target": "Package",
+              "version": "[5.2.3, )"
+            },
+            "Serenity.Scripts": {
+              "target": "Package",
+              "version": "[5.2.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

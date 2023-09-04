@@ -1,0 +1,15 @@
+﻿@inject Serenity.ITextLocalizer Localizer
+@model int?
+@{
+    ViewData["Title"] = Localizer.Get("Db.CashBank.Banktransactions.EntityPlural");
+}
+
+<div id="GridDiv"></div>
+
+<script type="text/javascript">
+    jQuery(function () {
+        new CloudGarage.CashBank.BanktransactionsGrid($('#GridDiv'), {}).init();
+
+        Q.initFullHeightGridPage($('#GridDiv'));
+    });
+</script>

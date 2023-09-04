@@ -1,0 +1,18 @@
+﻿<StaticWebAssets Version="1.0">
+  <ContentRoot BasePath="/Serenity.Assets" Path="C:\Users\ACER\.nuget\packages\serenity.assets\5.2.2\build\..\staticwebassets\" />
+  <ContentRoot BasePath="/Serenity.Demo.AdvancedSamples" Path="C:\Users\ACER\.nuget\packages\serenity.demo.advancedsamples\5.2.3\build\..\staticwebassets\" />
+  <ContentRoot BasePath="/Serenity.Demo.BasicSamples" Path="C:\Users\ACER\.nuget\packages\serenity.demo.basicsamples\5.2.2\build\..\staticwebassets\" />
+  <ContentRoot BasePath="/Serenity.Demo.Northwind" Path="C:\Users\ACER\.nuget\packages\serenity.demo.northwind\5.2.2\build\..\staticwebassets\" />
+  <ContentRoot BasePath="/Serenity.Extensions" Path="C:\Users\ACER\.nuget\packages\serenity.extensions\5.2.2\build\..\staticwebassets\" />
+  <ContentRoot BasePath="/Serenity.Pro.DataAuditLog" Path="C:\Users\ACER\.nuget\packages\serenity.pro.dataauditlog\5.2.3\build\..\staticwebassets\" />
+  <ContentRoot BasePath="/Serenity.Pro.DataExplorer" Path="C:\Users\ACER\.nuget\packages\serenity.pro.dataexplorer\5.2.3\build\..\staticwebassets\" />
+  <ContentRoot BasePath="/Serenity.Pro.EmailClient" Path="C:\Users\ACER\.nuget\packages\serenity.pro.emailclient\5.2.3\build\..\staticwebassets\" />
+  <ContentRoot BasePath="/Serenity.Pro.EmailQueue" Path="C:\Users\ACER\.nuget\packages\serenity.pro.emailqueue\5.2.3\build\..\staticwebassets\" />
+  <ContentRoot BasePath="/Serenity.Pro.Extensions" Path="C:\Users\ACER\.nuget\packages\serenity.pro.extensions\5.2.3\build\..\staticwebassets\" />
+  <ContentRoot BasePath="/Serenity.Pro.Meeting" Path="C:\Users\ACER\.nuget\packages\serenity.pro.meeting\5.2.3\build\..\staticwebassets\" />
+  <ContentRoot BasePath="/Serenity.Pro.Organization" Path="C:\Users\ACER\.nuget\packages\serenity.pro.organization\5.2.3\build\..\staticwebassets\" />
+  <ContentRoot BasePath="/Serenity.Pro.Theme" Path="C:\Users\ACER\.nuget\packages\serenity.pro.theme\5.2.3\build\..\staticwebassets\" />
+  <ContentRoot BasePath="/Serenity.Pro.UI" Path="C:\Users\ACER\.nuget\packages\serenity.pro.ui\5.2.3\build\..\staticwebassets\" />
+  <ContentRoot BasePath="/Serenity.Pro.WorkLog" Path="C:\Users\ACER\.nuget\packages\serenity.pro.worklog\5.2.3\build\..\staticwebassets\" />
+  <ContentRoot BasePath="/Serenity.Scripts" Path="C:\Users\ACER\.nuget\packages\serenity.scripts\5.2.3\build\..\staticwebassets\" />
+</StaticWebAssets>

@@ -1,0 +1,812 @@
+﻿@model CloudGarage.Common.DashboardPageModel
+@inject Serenity.ITextLocalizer Localizer
+@{
+    ViewData["Title"] = "Dashboard";
+    ViewData["PageId"] = "Dashboard";
+}
+
+@section Head {
+@Html.StyleBundle("Pages/Dashboard")
+@Html.ScriptBundle("Pages/Dashboard")
+}
+
+
+<style type="text/css">
+    h1,h2, h3, h4, h6{
+        font-family:"Poppins",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+    }
+    .title, #display-tgl, .text-black{
+        font-family:"Poppins",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji" !important;
+    }
+    body{
+        font-family:"Poppins",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji" !important;
+    }
+    #gdOrganizations.fullscreen,
+    #gdMessages.fullscreen,
+    #gdApproval.fullscreen,
+    #gdTodolist.fullscreen,
+    #gdQuickemail.fullscreen,
+    #gdActivities.fullscreen {
+        z-index: 1048;
+        width: 100%;
+        height: 100vh;
+        min-height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+
+    #gdOrganizations,
+    #gdMessages,
+    #gdApproval,
+    #gdTodolist,
+    #gdQuickemail,
+    #gdActivities {
+        height: max-content;
+    }
+    .theme-azure-light .nk-tb-head {
+        background-color: #e5e9f2 !important;
+    }
+    
+    .theme-cosmos-dark .nk-tb-head {
+        background-color: #071222;
+    }
+    .content-ds{
+        overflow-y: auto;
+        height: 100%;
+    }
+    p{
+        color: 526484;
+    }
+    .theme-cosmos-dark p{
+        color: white;
+    }
+    .theme-cosmos-dark #gdOrganizations{
+        background-color: #0a182c;
+    }
+    .theme-cosmos-dark #gdApproval{
+        background-color: #0a182c;
+    }
+    .theme-cosmos-dark .nk-block-head-content{
+        color: white;
+    }
+    .theme-azure-light ..nk-block-head-content{
+        color: black;
+    }
+    .theme-cosmos-dark .fa-angle-right{
+        color: white;
+    }
+    .theme-cosmos-dark .fa-angle-left{
+        color: white;
+    }
+    .theme-cosmos-dark .card-title{
+        color: white;
+    }
+</style>
+
+<!-- Dashboard Chat -->
+<div class="container-fluid p-1" data-title="Dashboard Chat">
+
+    <!-- nk-content-inner -->
+    <div class="nk-content-inner">
+
+        <!-- nk-content-body -->
+        <div class="nk-content-body">
+
+            <!-- nk-block-head -->
+            <div class="nk-block-head nk-block-head-sm">
+
+                <!-- nk-block-between -->
+                <div class="nk-block-between">
+
+                    <!-- nk-block-head-content -->
+                    <div class="nk-block-head-content">
+                        <h4>Dashboard</h4>
+                    </div>
+                    <!--  End nk-block-head-content -->
+
+                    <!-- nk-block-head-content d-flex -->
+                    <div class="nk-block-head-content d-flex">
+                        <a href="#" onclick="refreshPage()" class="btn lkbtn-icon lkbtn-primary">
+                            <em class="icon fa fa-refresh"></em>
+                        </a>
+                    </div>
+                    <!-- End nk-block-head-content d-flex -->
+
+                </div>
+                <!-- End nk-block-between -->
+
+            </div>
+            <!-- End-nk-block-head -->
+
+            <!-- nk-block -->
+            <div class="nk-block">
+
+                <!-- row -->
+                <div class="row">
+
+                    <!-- col -->
+                    <div class="col-lg-3 col-xs-6">
+                        <div class="card s-dashboard-card-sm">
+                            <div class="card-body">
+                                <h3>@Model.TodaySale</h3>
+                                <p>Today's Sale</p>
+                            </div>
+                            <div class="icon">
+                                <i class="fa fa-shopping-chart"></i>
+                            </div>
+                            <a href="~/Sales/Sales" class="card-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-xs-6">
+                        <div class="card s-dashboard-card-sm s-alt">
+                            <div class="card-body">
+                                <h3>@Model.CustomerCount</h3>
+                                <p>Total Customers</p>
+                            </div>
+                            <div class="icon">
+                                <i class="fa fa-address-card-o"></i>
+                            </div>
+                            <a href="~/BussinessPartners/Customers" class="card-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-xs-6">
+                        <div class="card s-dashboard-card-sm">
+                            <div class="card-body">
+                                <h3>@Model.VehicleCount</h3>
+                                <p>Total Vrhicles</p>
+                            </div>
+                            <div class="icon">
+                                <i class="fa fa-truck"></i>
+                            </div>
+                            <a href="~/Vehicles/Vehicle" class="card-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-xs-6">
+                        <div class="card s-dashboard-card-sm s-alt">
+                            <div class="card-body">
+                                <h3>@Model.ProductCount</h3>
+                                <p>Total Products</p>
+                            </div>
+                            <div class="icon">
+                                <i class="fa fa-th"></i>
+                            </div>
+                            <a href="~/Inventory/Products" class="card-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
+                    <!-- End col -->
+
+                </div>
+                <!-- End row -->
+                
+                <!-- row -->
+                <div class="row">
+                    <section class="col-lg-12">
+                        <div class="card s-dashboard-card">
+                            <div class="card-body">
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="header d-flex">
+                                    <h3 class="card-title"> Sales And Purchase Report Summary<span id="lbl-tahun-lk">@Model.Tahun</span> </h3>
+                                        <div class="row" style="position: absolute;margin-left: 460px;margin-top:-5px;">
+                                            <div class="col-2" style="margin-right: 10px;"><button class="btn lkbtn-icon border navigation-lk" data-action="kurang" style="margin-right: 20px;">
+                                                <i class="icon fas fa-angle-left"></i></button></div>
+                                            <div class="col-2"><button class="btn lkbtn-icon border navigation-lk" data-action="tambah"><i class="icon fas fa-angle-right"></i></button></div>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item ms-auto"><a class="nav-link active" href="#orders-by-quarter-pane" data-bs-toggle="tab">Status</a></li>
+                                    @* <li class="nav-item"><a class="nav-link" href="#orders-by-type-pane" data-bs-toggle="tab">Kategori</a></li> *@
+                                </ul>
+                                <div class="tab-content no-padding">
+                                    <div class="tab-pane fade show active" id="orders-by-quarter-pane">
+                                        <canvas id="lembarkerja-chart" style="height: 280px;"></canvas>
+                                    </div>
+                                    <div class="tab-pane fade" id="orders-by-type-pane">
+                                        <canvas id="layanan-chart" style="height: 280px !important;"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <!-- End row -->
+
+                <!-- Row -->
+                <div class="row">
+                    <section class="col-lg-5 connectedSortable mt-3">
+                        <!-- Custom tabs (Charts with tabs)-->
+                        <div class="lkcard lkcard-bordered" id="gdOrganizations">
+                            <div class="lkcard-inner-group">
+                                <div class="lkcard-inner p-1">
+                                    <div class="lkcard-title-group">
+                                        <div class="lkcard-title">
+                                            <h6 class="title">&nbsp; Grup</h6>
+                                        </div>
+                                        <div class="lkcard-tools mr-n1 maximize-organizations">
+                                            <div class="lkbtn lkbtn-icon" id="fullOrganizations" role="button">
+                                                <i class="icon fas fa-expand-arrows-alt" id="iconOrganizations"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><!-- .lkcard-inner -->
+                                <div class="lkcard-inner p-0 pb-2">
+                                    <div class="traffic-channel">
+                                        <div class="traffic-channel-doughnut-ck">
+                                            <canvas class="analytics-doughnut" id="TrafficChannelDoughnutData"></canvas>
+                                        </div>
+                                        <div class="traffic-channel-group g-2">
+                                            <div class="traffic-channel-data pribadi" style="cursor:pointer;">
+                                                <div class="title"><span class="dot dot-lg sq" data-bg="#364a63"></span><span>Customer</span></div>
+                                                <div class="amount">@Model.CustomerCount</div>
+                                            </div>
+                                            <div class="traffic-channel-data bank" style="cursor:pointer;">
+                                                <div class="title"><span class="dot dot-lg sq" data-bg="#f39c12"></span><span>Vehicle</span></div>
+                                                <div class="amount">@Model.VehicleCount</div>
+                                            </div>
+                                            <div class="traffic-channel-data perusahaan" style="cursor:pointer;">
+                                                <div class="title"><span class="dot dot-lg sq" data-bg="#1f7dce"></span><span>Product</span></div>
+                                                <div class="amount">@Model.ProductCount</div>
+                                            </div>
+                                        </div><!-- .traffic-channel-group -->
+                                    </div>
+                                </div>
+                            </div><!-- .lkcard-inner-group -->
+                    </section><!-- /.Right col -->
+
+                    <section class="col-lg-7 connectedSortable mt-3">
+                        <!-- Map box -->
+                        <div class="lkcard lkcard-bordered" id="gdApproval">
+                            <div class="lkcard-inner-group">
+                                <div class="lkcard-inner p-1">
+                                    <div class="lkcard-title-group">
+                                        <div class="lkcard-title">
+                                            <h6 class="title">&nbsp; Penjualan Terakhir</h6>
+                                        </div>
+                                        <div class="lkcard-tools mr-n1 maximize-approval">
+                                            <div class="lkbtn lkbtn-icon" id="fullApproval" role="button">
+                                                <i class="icon fas fa-expand-arrows-alt" id="iconApproval"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><!-- .lkcard-inner -->
+                                <div class="lkcard-inner p-0 content-ds">
+                                    <div  style="overflow:hidden; overflow-y:auto;" class="nk-tb-list nk-tb-ulist is-compact">
+                                        <div class="nk-tb-item nk-tb-head">
+                                            <div class="nk-tb-col"><span class="tb-lead">Id</span></div>
+                                            <div class="nk-tb-col">
+                                                <span class="tb-lead">Produk</span>
+                                            </div>
+                                            <div class="nk-tb-col">
+                                                <span class="tb-lead">Jumlah</span>
+                                            </div>
+                                        </div>
+                                       @if (Model.Sales.ToArray().Length == 0)
+                                        {
+                                            <div class="nk-tb-item">
+                                                <center>Tidak Ada Penjualan</center>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            @foreach(var item in Model.Sales)
+                                            {
+                                            <div class="nk-tb-item" style="cursor:pointer;">
+                                                <div class="nk-tb-col detail" data-id="@item.Id">
+                                                    <span class="tb-sub">@Model.Sales.Find(e => e.Id == @item.Id).Id</span>
+                                                </div>
+                                                <div class="nk-tb-col">
+                                                        
+                                                        <span class="tb-sub">@Model.Sales.Find(e => e.Id == @item.Id).ProductName</span>
+                                                        </div>
+                                             <div class="nk-tb-col">
+                                                        
+                                                        <span class="tb-sub">@Model.Sales.Find(e => e.Id == @item.Id).Quantity</span>
+                                            
+                                                
+                                            </div>
+                                            </div>
+                                            }
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+                <!-- End row -->
+
+            </div>
+            <!-- End nk-block -->
+
+        </div>
+        <!-- End nk-content-body -->
+
+    </div>
+    <!-- End nk-content-inner -->
+
+</div>
+<!-- End Dashboard Chat -->    
+
+<script>
+
+    //Refresh Page
+    function refreshPage() {
+        location.reload();
+    }
+    
+    $(function () {
+        var date = new Date();
+        var tglSekarang = new Date();
+
+        if(new Date(date)>=tglSekarang){
+            $("[data-action='tambah']").addClass("disabled");
+        }else{
+            $("[data-action='tambah']").removeClass("disabled");
+        }
+
+        const scaleGrid = {
+            color: 'rgba(140, 142, 150, 0.15)',
+            borderDash: [8, 4]
+        }
+
+        var lembarkerjaChartJs = new Chart(document.getElementById('lembarkerja-chart'), {
+            type: 'line',
+            data: {
+                labels: ['Jan','Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Ags', 'Sep','Okt','Nov','Des' ],
+                datasets: [
+                    {
+                        backgroundColor: 'rgba(75, 192, 192, 0.5)',
+                        borderColor: 'rgb(255, 255, 255, 0.7)',
+                        borderWidth: 4,
+                        radius: 0,
+                        hitRadius: 6,
+                        label: 'Calon',
+                        fill: true,
+                        data: @Model.Purchase.ToJson()
+                    },
+                    {
+                        backgroundColor: 'rgba(54, 162, 235, 0.4)',
+                        borderColor: 'rgba(54, 162, 235, 0.2)',
+                        borderWidth: 4,
+                        radius: 0,
+                        hitRadius: 6,
+                        label: 'Aktif',
+                        fill: true,
+                        data: @Model.Sale.ToJson()
+                    },
+                    {
+                        label: 'Selesai',
+                        backgroundColor: 'rgba(187, 0, 255, 0.9)',
+                        borderColor: 'rgba(54, 162, 235, 0.2)',
+                        borderWidth: 4,
+                        radius: 0,
+                        hitRadius: 6,
+                        label: 'Selesai',
+                        fill: true,
+                        data: @Model.Expense.ToJson()
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        ticks: {
+                            color: 'rgb(140, 142, 150)'
+                        },
+                        grid: {
+                            display: false,
+                        }
+                    },
+                    y: {
+                        ticks: {
+                            color: 'rgb(140, 142, 150)'
+                        },
+                        grid: scaleGrid
+                    }
+                }
+            }
+        });
+
+        function getDataLayanan(){
+            $("#lbl-tahun-lk").text(Q.formatDate(date, "yyyy"));
+            CloudGarage.Purchasing.PurchaseService.List({
+                Criteria: [
+                    [
+                        [
+                            "In"
+                        ],
+                        ">=",
+                        date.getFullYear()+"-01-01"
+                    ],
+                    "and",
+                    [
+                        [
+                            "In"
+                        ],
+                        "<",
+                        date.getFullYear()+1+"-01-01"
+                    ]
+                ]
+            },response=>{
+                var purchase = [];
+                
+                lembarkerjaChartJs.destroy();
+                for (var i = 1; i < 13; i++)
+                {
+                    var firstDayOfMonth = new Date(date.getFullYear(),i-1,1);
+                    var lastDayOfMonth = new Date(date.getFullYear(), i, 0);
+                    purchase.push(response.Entities.filter(function(e){return new Date(e.In)>=firstDayOfMonth && new Date(e.In)<=lastDayOfMonth}).length)
+                    
+                }
+
+                $("#lbl-tahun-lk").text(Q.formatDate(date, "yyyy"));
+                CloudGarage.Sales.SalesService.List({
+                    Criteria: [
+                        [
+                            [
+                                "In"
+                            ],
+                            ">=",
+                            date.getFullYear() + "-01-01"
+                        ],
+                        "and",
+                        [
+                            [
+                                "In"
+                            ],
+                            "<",
+                            date.getFullYear() + 1 + "-01-01"
+                        ]
+                    ]
+                }, response => {
+                    var sale = [];
+
+                    lembarkerjaChartJs.destroy();
+                    for (var i = 1; i < 13; i++) {
+                        var firstDayOfMonth = new Date(date.getFullYear(), i - 1, 1);
+                        var lastDayOfMonth = new Date(date.getFullYear(), i, 0);
+                        sale.push(response.Entities.filter(function(e) { return new Date(e.In) >= firstDayOfMonth && new Date(e.In) <= lastDayOfMonth }).length)
+                    }
+
+                }); 
+
+                $("#lbl-tahun-lk").text(Q.formatDate(date, "yyyy"));
+                CloudGarage.CashBank.ExpencesService.List({
+                    Criteria: [
+                        [
+                            [
+                                "In"
+                            ],
+                            ">=",
+                            date.getFullYear() + "-01-01"
+                        ],
+                        "and",
+                        [
+                            [
+                                "In"
+                            ],
+                            "<",
+                            date.getFullYear() + 1 + "-01-01"
+                        ]
+                    ]
+                }, response => {
+                    var expense = [];
+
+                    lembarkerjaChartJs.destroy();
+                    for (var i = 1; i < 13; i++) {
+                        var firstDayOfMonth = new Date(date.getFullYear(), i - 1, 1);
+                        var lastDayOfMonth = new Date(date.getFullYear(), i, 0);
+                        expense.push(response.Entities.filter(function(e) { return new Date(e.In) >= firstDayOfMonth && new Date(e.In) <= lastDayOfMonth }).length)
+
+                    }
+                });
+
+                lembarkerjaChartJs = new Chart(document.getElementById('lembarkerja-chart'), {
+                    type: 'line',
+                    data: {
+                        labels: ['Jan','Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Ags', 'Sep','Okt','Nov','Des' ],
+                        datasets: [
+                            {
+                                backgroundColor: 'rgba(75, 192, 192, 0.5)',
+                                borderColor: 'rgb(255, 255, 255, 0.7)',
+                                borderWidth: 4,
+                                radius: 0,
+                                hitRadius: 6,
+                                label: 'Calon',
+                                fill: true,
+                                data: purchase
+                            },
+                            {
+                                label: 'Aktif',
+                                backgroundColor: 'rgba(54, 162, 235, 0.4)',
+                                borderColor: 'rgba(54, 162, 235, 0.2)',
+                                borderWidth: 4,
+                                radius: 0,
+                                hitRadius: 6,
+                                fill: true,
+                                data: sale
+                            },
+                            {
+                                label: 'Selesai',
+                                backgroundColor: 'rgba(187, 0, 255, 0.9)',
+                                borderColor: 'rgba(54, 162, 235, 0.2)',
+                                borderWidth: 4,
+                                radius: 0,
+                                hitRadius: 6,
+                                fill: true,
+                                data: expense
+                            }
+                        ]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            x: {
+                                ticks: {
+                                    color: 'rgb(140, 142, 150)'
+                                },
+                                grid: {
+                                    display: false,
+                                }
+                            },
+                            y: {
+                                ticks: {
+                                    color: 'rgb(140, 142, 150)'
+                                },
+                                grid: scaleGrid
+                            }
+                        }
+                    }
+                });
+                const bgcolor1=[
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(255, 205, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(201, 203, 207, 0.2)',
+                            'rgba(191, 227, 153, 0.2)'
+                        ];
+                const bdrcolor1=[
+                    'rgb(255, 99, 132)',
+                    'rgb(255, 205, 86)',
+                    'rgb(75, 192, 192)',
+                    'rgb(54, 162, 235)',
+                    'rgb(153, 102, 255)',
+                    'rgb(201, 203, 207)',
+                    'rgb(191, 227, 153)'
+                ];
+                const allData1 = [];
+                for (let i = 0; i < labels1.length; ++i) {
+                    allData1.push({
+                        label: labels1[i],
+                        bg:bgcolor1[i],
+                        bdr:bdrcolor1[i]
+                    });
+                }
+
+                allData1.sort((a, b) => b.data - a.data);
+
+                const sortedLabels = allData1.map(e => e.label);
+                const sortedData = allData1.map(e => e.data);
+                const sortedBg = allData1.map(e => e.bg);
+                const sortedBdr = allData1.map(e => e.bdr);
+                
+                $('#lembarkerja-chart').css('height','280');
+            });
+        }
+    
+        $(".navigation-lk").on("click",function(){
+            if($(this).attr('data-action')=='tambah'){
+                date.setYear(date.getFullYear()+1);
+            }else{
+                date.setYear(date.getFullYear()-1);
+            }
+            if(new Date(date)>=tglSekarang){
+                $("[data-action='tambah']").addClass("disabled");
+            }else{
+                $("[data-action='tambah']").removeClass("disabled");
+            }
+            getDataLayanan();           
+        })
+
+    });
+
+    //~~Approval
+    // Q.initFullHeightGridPage($('#gdApproval'));
+    var maxApproval = ""
+    $('#fullApproval').click(function (e) {
+        if (maxApproval == "") {
+            $('#gdApproval').toggleClass('fullscreen');
+            Q.initFullHeightGridPage($('#gdApproval'));
+            $('#iconApproval').attr('class', 'icon fa fa-close')
+            maxApproval = 'ooo'
+            $('.floatBtn').css('float', 'left')
+        } else if (maxApproval == 'ooo') {
+            $('#gdApproval').toggleClass('fullscreen');
+            Q.initFullHeightGridPage($('#gdApproval'));
+            $('#iconApproval').attr('class', 'icon fas fa-expand-arrows-alt')
+            $('#gdApproval').css('height', 'max-content')
+            maxApproval = ''
+            $('.floatBtn').css('float', 'right')
+        }
+    });           
+
+    //Maximize Panel
+    //~~Organizations
+    // Q.initFullHeightGridPage($('#gdOrganizations'));
+    var maxOrganizations = ""
+    $('#fullOrganizations').click(function (e) {
+        if (maxOrganizations == "") {
+            maxOrganizations = 'ooo'
+            $('#gdOrganizations').toggleClass('fullscreen');
+            Q.initFullHeightGridPage($('#gdOrganizations'));
+            $('#iconOrganizations').attr('class', 'icon fa fa-close')
+        } else if (maxOrganizations == 'ooo') {
+            maxOrganizations = ''
+            $('#gdOrganizations').toggleClass('fullscreen');
+            Q.initFullHeightGridPage($('#gdOrganizations'));
+            $('#iconOrganizations').attr('class', 'icon fas fa-expand-arrows-alt')
+            $('#gdOrganizations').css('height', 'max-content')
+        }
+    });
+
+   // Function Dougnut chart
+    ! function (NioApp, $) {
+        "use strict";
+
+        var $win = $(window),
+        $body = $('body'),
+        breaks = NioApp.Break; // Inbox Variable
+
+        var $ibx_aside = $('.nk-ibx-aside'),
+        $ibx_link = $('.nk-ibx-link'),
+        $ibx_hide = $('.nk-ibx-hide'),
+        $ibx_view = $('.nk-ibx-view'),
+        $ibx_reply_head = $('.nk-ibx-reply-lkheader'),
+        $tagify = $('.tagify'),
+        hide_aside = 'hide-aside',
+        show_ibx = 'show-ibx';
+
+        NioApp.Message = function () {
+            function ibx_show() {
+                $ibx_link.on('click', function (e) {
+                    $ibx_link.removeClass('current');
+                    $ibx_aside.addClass(hide_aside);
+                    $ibx_view.addClass(show_ibx);
+                    $(this).addClass('current');
+                    e.preventDefault();
+                });
+            }
+
+            ibx_show();
+
+            function ibx_hide() {
+                $ibx_hide.on('click', function (e) {
+                    $ibx_aside.removeClass(hide_aside);
+                    $ibx_view.removeClass(show_ibx);
+                    e.preventDefault();
+                });
+            }
+
+            ibx_hide();
+
+            function reply_toggle() {
+                $ibx_reply_head.on('click', function (e) {
+                    if (!$(this).hasClass('is-opened') && !($(e.target).parents('.nk-reply-tools').length > 0)) {
+                        if ($(this).hasClass('is-collapsed')) {
+                            $(this).removeClass('is-collapsed').next().addClass('is-shown');
+                        } else if (!$(this).hasClass('is-collapsed')) {
+                            $(this).addClass('is-collapsed').next().removeClass('is-shown');
+                        }
+                    }
+                });
+            }
+
+            reply_toggle();
+
+            function tagify_init() {
+                if ($tagify.exists() && typeof $.fn.tagify === 'function') {
+                    $tagify.tagify();
+                }
+            }
+
+            tagify_init();
+        };
+
+        NioApp.coms.docReady.push(NioApp.Message);
+        var TrafficChannelDoughnutData = {
+            labels : ["Customers", "Vehicle", "Product"],
+            dataUnit : 'Customers',
+            legend: false,
+            datasets : [{
+                borderColor : "#fff",
+                background : ["#364a63","#f39c12","#1f7dce"],
+                data: [@Model.CustomerCount, @Model.VehicleCount, @Model.ProductCount]
+            }]
+        };
+
+        function analyticsDoughnut(selector, set_data){
+        var $selector = (selector) ? $(selector) : $('.analytics-doughnut');
+            $selector.each(function(){
+                var $self = $(this), _self_id = $self.attr('id'), _get_data = (typeof set_data === 'undefined') ? eval(_self_id) : set_data;
+                var selectCanvas = document.getElementById(_self_id).getContext("2d");
+
+                var chart_data = [];
+                for (var i = 0; i < _get_data.datasets.length; i++) {
+                    chart_data.push({
+                        backgroundColor: _get_data.datasets[i].background,
+                        borderWidth:2,
+                        borderColor: _get_data.datasets[i].borderColor,
+                        hoverBorderColor: _get_data.datasets[i].borderColor,
+                        data: _get_data.datasets[i].data,
+                    });
+                } 
+                var chartStatus = new Chart(selectCanvas, {
+                    type: 'doughnut',
+                    data: {
+                        labels: _get_data.labels,
+                        datasets: chart_data,
+                    },
+                    options: {
+                        legend: {
+                            display: (_get_data.legend) ? _get_data.legend : false,
+                            rtl: NioApp.State.isRTL,
+                            labels: {
+                                boxWidth:12,
+                                padding:20,
+                                fontColor: '#6783b8',
+                            }
+                        },
+                        rotation: -1.5,
+                        cutoutPercentage:70,
+                        maintainAspectRatio: false,
+                        tooltips: {
+                            enabled: true,
+                            rtl: NioApp.State.isRTL,
+                            callbacks: {
+                                title: function(tooltipItem, data) {
+                                    return data['labels'][tooltipItem[0]['index']];
+                                },
+                                label: function(tooltipItem, data) {
+                                    return data.datasets[tooltipItem.datasetIndex]['data'][tooltipItem['index']] + ' ' + _get_data.dataUnit;
+                                }
+                            },
+                            backgroundColor: '#fff',
+                            borderColor:'#eff6ff',
+                            borderWidth:2,
+                            titleFontSize: 13,
+                            titleFontColor: '#6783b8',
+                            titleMarginBottom: 6,
+                            bodyFontColor: '#9eaecf',
+                            bodyFontSize: 12,
+                            bodySpacing:4,
+                            yPadding: 10,
+                            xPadding: 10,
+                            footerMarginTop: 0,
+                            displayColors: false
+                        },
+                    }
+                });
+                $('.analytics-doughnut').on('click',function(click){
+                    const points = chartStatus.getElementsAtEventForMode(click,'nearest',{intersect:true},true);
+                    if(points[0]._index==0){
+                        window.location.href=`/Grup/Grup`;
+                    }else if(points[0]._index==1){
+                        window.location.href=`/Grup/Grup`;
+                    }else if(points[0]._index==2){
+                        window.location.href=`/Grup/Grup`;
+                    }
+                });
+            })
+        }    
+
+        // init chart
+        NioApp.coms.docReady.push(function(){ analyticsDoughnut(); });
+
+    }(NioApp, jQuery);
+                   
+</script>
